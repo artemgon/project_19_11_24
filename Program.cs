@@ -1,10 +1,16 @@
 ﻿namespace project_19_11_24
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            try
+            {
+            }
+            catch (Exception e)
+            {
+            }
         }
     }
 }
