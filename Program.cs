@@ -1,47 +1,34 @@
-﻿using System;
+﻿using project_19_11_24.Classes;
 
-Console.ForegroundColor = ConsoleColor.DarkBlue;
-Console.WriteLine("Choose the way you want to sort the array:");
-Console.WriteLine("1. Ascending");
-Console.WriteLine("2. Descending");
-Console.Write("Enter your choice: ");
-Console.WriteLine("True for Ascending, False for Descending");
-bool choice = Convert.ToBoolean(Console.ReadLine());
-Console.WriteLine();
-
-int[] arr = { 5, 2, 8, 6, 1, 9, 3, 7, 4 };
-
-int[] ArraySort(int[] arr)
+namespace project_19_11_24
 {
-    for (int i = 0; i < arr.Length; i++)
+    public class Program
     {
-        for (int j = i + 1; j < arr.Length; j++)
+        static void Main()
         {
-            if (choice)
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            try
             {
-                if (arr[i] > arr[j])
-                {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
+                City city1 = new City();
+                city1.printInfo();
+                city1.printInfo();
+                Console.WriteLine();
+                City city2 = new City("Istanbul");
+                Console.WriteLine(city2.cityName);
+                Console.WriteLine();
+                City city3 = new City("Istanbul", "Turkey");
+                Console.WriteLine(city3.cityName + " " + city3.countryName);
+                Console.WriteLine();
+                City city4 = new City("Istanbul", "Turkey", "+90");
+                Console.WriteLine(city4.cityName + " " + city4.countryName + " " + city4.phoneCode);
+                Console.WriteLine();
+                City city5 = new City("Istanbul", "Turkey", "+90", new List<string> { "Kadikoy", "Besiktas", "Beyoglu" });
+                city5.printInfo();
+                Console.WriteLine();
             }
-            else
+            catch (Exception e)
             {
-                if (arr[i] < arr[j])
-                {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
             }
         }
     }
-    return arr;
-}
-
-int[] sortedArray = ArraySort(arr);
-for (int i = 0; i < sortedArray.Length; i++)
-{
-    Console.Write(sortedArray[i] + " ");
 }
