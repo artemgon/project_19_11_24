@@ -1,24 +1,28 @@
 ﻿using project_19_11_24.Classes;
 
-namespace project_19_11_24
+int length = int.Parse(Console.ReadLine() ?? "");
+char symbol = char.Parse(Console.ReadLine() ?? "");
+
+void PrintSquare(int length, char symbol)
 {
-    public class Program
+    for (int i = 0; i < length; i++)
     {
-        static void Main()
+        Console.Write(symbol);
+    }
+    Console.WriteLine();
+    for (int i = 0; i < length - 2; i++)
+    {
+        Console.Write(symbol);
+        for (int j = 0; j < length - 2; j++)
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            try
-            {
-                Matrix matrix = new Matrix(3, 3);
-                matrix.SetMatrix(new double[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } });
-                Console.WriteLine(matrix.MinimalElement());
-                Console.WriteLine();
-                matrix.PrintMatrix();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            Console.Write(" ");
         }
+        Console.WriteLine(symbol);
+    }
+    for (int i = 0; i < length; i++)
+    {
+        Console.Write(symbol);
     }
 }
+
+PrintSquare(length, symbol);
