@@ -1,45 +1,50 @@
 ﻿
 namespace project_19_11_24.Classes
 {
-    internal class City
+    public class Employee
     {
-        public string cityName { get; set; }
-        public string countryName { get; set; }
-        public string phoneCode { get; set; }
-        public List<string> cityDistricts { get; set; }
-        public City()
+        public string SNP { get; set; }
+        public string DateOfBirth { get; set; }
+        public string PoneNumber { get; set; }
+        public string WorkEmail { get; set; }
+        public string Position { get; set; }
+        public string Duties { get; set; }
+        public Employee()
         {
-            cityName = "Unknown";
-            countryName = "Unknown";
-            phoneCode = "Unknown";
-            cityDistricts = new List<string>();
+            SNP = "Unknown";
+            DateOfBirth = "Unknown";
+            PoneNumber = "Unknown";
+            WorkEmail = "Unknown";
+            Position = "Unknown";
+            Duties = "Unknown";
         }
-        public City(string name) : this()
+        public Employee(string snp) : this()
         {
-            cityName = name;
+            SNP = snp;
         }
-        public City(string name, string country) : this(name)
+        public Employee(string snp, string dateOfBirth) : this(snp)
         {
-            countryName = country;
+            DateOfBirth = dateOfBirth;
         }
-        public City(string name, string country, string code) : this(name, country)
+        public Employee(string snp, string dateOfBirth, string poneNumber) : this(snp, dateOfBirth)
         {
-            phoneCode = code;
+            PoneNumber = poneNumber;
         }
-        public City(string name, string country, string code, List<string> districts) : this(name, country, code)
+        public Employee(string snp, string dateOfBirth, string poneNumber, string workEmail) : this(snp, dateOfBirth, poneNumber)
         {
-            cityDistricts = districts;
+            WorkEmail = workEmail;
         }
-        public void printInfo()
+        public Employee(string snp, string dateOfBirth, string poneNumber, string workEmail, string position) : this(snp, dateOfBirth, poneNumber, workEmail)
         {
-            Console.WriteLine("City Name: " + cityName);
-            Console.WriteLine("Country Name: " + countryName);
-            Console.WriteLine("Phone Code: " + phoneCode);
-            Console.WriteLine("City Districts: ");
-            foreach (string district in cityDistricts)
-            {
-                Console.WriteLine(district);
-            }
+            Position = position;
+        }
+        public Employee(string snp, string dateOfBirth, string poneNumber, string workEmail, string position, string duties) : this(snp, dateOfBirth, poneNumber, workEmail, position)
+        {
+            Duties = duties;
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine($"SNP: {SNP}\nDate of birth: {DateOfBirth}\nPhone number: {PoneNumber}\nWork email: {WorkEmail}\nPosition: {Position}\nDuties: {Duties}");
         }
     }
 }

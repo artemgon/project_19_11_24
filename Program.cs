@@ -9,25 +9,21 @@ namespace project_19_11_24
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             try
             {
-                City city1 = new City();
-                city1.printInfo();
-                city1.printInfo();
+                Employee employee = new Employee();
+                employee.ShowInfo();
                 Console.WriteLine();
-                City city2 = new City("Istanbul");
-                Console.WriteLine(city2.cityName);
+                Employee employee1 = new Employee(snp: "John Doe", dateOfBirth: "01.01.2000", poneNumber: "+1234567890", workEmail: "johndoe123@gmail.com", position: "Developer", duties: "Write code");
+                employee1.ShowInfo();
                 Console.WriteLine();
-                City city3 = new City("Istanbul", "Turkey");
-                Console.WriteLine(city3.cityName + " " + city3.countryName);
+                Console.WriteLine(employee1.Duties);
                 Console.WriteLine();
-                City city4 = new City("Istanbul", "Turkey", "+90");
-                Console.WriteLine(city4.cityName + " " + city4.countryName + " " + city4.phoneCode);
-                Console.WriteLine();
-                City city5 = new City("Istanbul", "Turkey", "+90", new List<string> { "Kadikoy", "Besiktas", "Beyoglu" });
-                city5.printInfo();
+                employee1.Duties = "1. Write code\n2. Test code\n3. Fix bugs";
+                Console.WriteLine(employee1.Duties);
                 Console.WriteLine();
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
             }
         }
     }
