@@ -23,11 +23,15 @@ namespace project_19_11_24
                 Console.WriteLine(city4.cityName + " " + city4.countryName + " " + city4.phoneCode);
                 Console.WriteLine();
                 City city5 = new City("Istanbul", "Turkey", "+90", new List<string> { "Kadikoy", "Besiktas", "Beyoglu" });
-                city5.printInfo();
+                Console.WriteLine(city5.cityName + " " + city5.countryName + " " + city5.phoneCode);
+                Console.WriteLine();
+                City city6 = new City("Istanbul", "Turkey", "+90", new List<string> { "Kadikoy", "Besiktas", "Beyoglu" }, 15000000);
+                Console.WriteLine(city6.cityName + " " + city6.countryName + " " + city6.phoneCode + " " + city6.Population);
                 Console.WriteLine();
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
             }
         }
     }

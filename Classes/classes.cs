@@ -7,12 +7,14 @@ namespace project_19_11_24.Classes
         public string countryName { get; set; }
         public string phoneCode { get; set; }
         public List<string> cityDistricts { get; set; }
+        public int Population { get; set; }
         public City()
         {
             cityName = "Unknown";
             countryName = "Unknown";
             phoneCode = "Unknown";
             cityDistricts = new List<string>();
+            Population = 0;
         }
         public City(string name) : this()
         {
@@ -30,6 +32,10 @@ namespace project_19_11_24.Classes
         {
             cityDistricts = districts;
         }
+        public City(string name, string country, string code, List<string> districts, int population) : this(name, country, code, districts)
+        {
+            Population = population;
+        }
         public void printInfo()
         {
             Console.WriteLine("City Name: " + cityName);
@@ -40,6 +46,7 @@ namespace project_19_11_24.Classes
             {
                 Console.WriteLine(district);
             }
+            Console.WriteLine("Population: " + Population);
         }
     }
 }
